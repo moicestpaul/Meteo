@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteo</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div class="modalSearch inactive">
+        <div class="modal">
+            <h1>Recherche :</h1>
+            <div class="results">
+                <ul class="results_list">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mainContainer">
+            <form class="mainContainer__form">
+                <input type="text" name="search" placeholder="Ville ou code postal">
+                <button type="submit">Rechercher</button>
+            </form>
+
+            <div class="mainContainer__meteo inactive">
+                <h1 class="mainContainer__meteo__title"></h1>
+                <div class="mainContainer__meteo__previsions">
+                    <div class="mainContainer__meteo__previsions__icon">
+                        <img src="./img/animated/clear-day.svg" alt="" class="mainContainer__meteo__previsions__icon__img">
+                        <h4 class="mainContainer__meteo__previsions__icon__text">Soleil</h4>
+                    </div>
+
+                    <div class="mainContainer__meteo__previsions__datas">
+                        <div class="row temperatures">
+                            <div class="item_colder">
+                                <img src="./img/animated/thermometer-colder.svg" alt="">
+                                <h3 class="item_colder_data"></h3>
+                            </div>
+                            <div class="separator"></div>
+                            <div class="item_warmer">
+                                <img src="./img/animated/thermometer-warmer.svg" alt="">
+                                <h3 class="item_warmer_data"></h3>
+                            </div>
+                        </div>
+
+                        <div class="row rain">
+                            <img src="./img/animated/raindrops.svg" alt="">
+                            <h3 class="rain_data"></h3>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

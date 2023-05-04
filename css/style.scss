@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&display=swap');
+
+$fonts: 'Inter',
+sans-serif;
+
+$background: #f5f5f7;
+$tile: #fff;
+$black-text: #1d1d1f;
+$grey-text:#6e6e73;
+$action-color: #0071e3;
+$action-color-hover: #0077ed;
+
+$form-font-size: 18px;
+$form-padding:10px 18px;
+
+$rem: 16rem;
+
+body {
+    background-color: $background;
+    display: flex;
+    justify-content: center;
+}
+
+.modalSearch {
+    &.active {
+        display: flex;
+    }
+
+    &.inactive {
+        display: none;
+    }
+
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.721);
+    z-index: 100;
+
+    .modal {
+        width: 95%;
+        max-width: 600px;
+
+        max-height: 80vh;
+        overflow-y: auto;
+
+        padding: 30px;
+
+        margin-top: 40px;
+
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        border: 1px solid rgb(237, 237, 237);
+        box-shadow: 2px 4px 12px rgba(0, 0, 0, .08);
+
+        ul {
+            list-style: none;
+            margin-top: 26px;
+
+            li {
+                margin: 10px 0;
+                font-family: $fonts;
+                font-size: 18px;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.mainContainer {
+    width: 95%;
+    max-width: 600px;
+    padding: 30px;
+
+    margin-top: 40px;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: 1px solid rgb(237, 237, 237);
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, .08);
+
+    h1 {
+        font-family: $fonts;
+        font-size: 25px;
+        color: $black-text;
+    }
+
+    h3 {
+        font-family: $fonts;
+        font-size: 20px;
+        color: $black-text;
+    }
+
+    h4 {
+        font-family: $fonts;
+        color: $black-text;
+        font-weight: 400;
+    }
+
+    .mainContainer__form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        width: 100%;
+
+
+
+        input {
+            width: 100%;
+
+            font-family: $fonts;
+            font-size: $form-font-size;
+            font-weight: 300;
+            padding: $form-padding;
+
+            border-radius: 8px;
+            border: 1px solid #d6d6d6;
+
+            color: $black-text;
+
+            &[type=text] {
+                margin-right: 10px;
+            }
+
+            &::placeholder {
+                color: $grey-text;
+                opacity: .5;
+            }
+
+            &:focus-visible {
+                outline: 1px solid $action-color;
+                border: 1px solid $action-color;
+            }
+        }
+    }
+
+    button {
+        font-family: $fonts;
+        font-size: $form-font-size;
+        font-weight: 400;
+        padding: $form-padding;
+
+        background: $action-color;
+
+        border-radius: 8px;
+        border: none;
+
+        color: white;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: $action-color-hover;
+        }
+
+    }
+
+    .mainContainer__meteo {
+        margin-top: 26px;
+
+        &.active {
+            display: block;
+        }
+
+        &.inactive {
+            display: none;
+        }
+    }
+
+    .mainContainer__meteo__previsions__icon {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        margin-bottom: 25px;
+
+        text-align: center;
+
+
+
+        img {
+            width: 250px;
+            margin: auto;
+        }
+    }
+
+    .mainContainer__meteo__previsions__datas {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+
+
+        img {
+            width: 100px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #d6d6d6;
+            border-radius: 8px;
+
+            &.temperatures {
+                gap: 0px;
+
+                @media screen and (max-width: 450px) {
+                    flex-direction: column;
+
+                    .separator {
+                        display: none;
+                    }
+                }
+
+                .separator {
+                    height: 40px;
+                    width: 1px;
+
+                    background-color: #d6d6d6;
+                }
+            }
+
+            .item_colder,
+            .item_warmer {
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                align-items: center;
+                padding-right: 35px;
+            }
+        }
+    }
+}
